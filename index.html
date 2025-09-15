@@ -818,7 +818,7 @@
             <div class="dialog-message">
                 For best performance and results, register a new account by clicking on the button below.
             </div>
-            <a href="https://colorsignup.github.io/ES1/91club" class="dialog-register-btn" onclick="closeDialog('dialogOverlay')">
+            <a href="https://colorsignup.github.io/ES1/91club" class="dialog-register-btn" onclick="openInBrowser('https://colorsignup.github.io/ES1/91club')">
                 Register Now
             </a>
         </div>
@@ -887,7 +887,11 @@
 <script>
 // Function to open URL in external browser
 function openInBrowser(url) {
-    window.open(url, '_blank');
+    if (typeof Android !== 'undefined' && Android.openExternalUrl) {
+        Android.openExternalUrl(url);
+    } else {
+        window.open(url, '_blank');
+    }
 }
 
 // Function to close any dialog box
