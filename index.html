@@ -770,7 +770,7 @@
                 <div class="action-buttons">
                     <div class="action-button-container">
                         <span class="button-tag register-tag">Bonus</span>
-                        <button class="action-button register-btn" onclick="openInBrowser('https://colorsignup.github.io/ES1/91club')">
+                        <button class="action-button register-btn" id="registerBtn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line>
                             </svg>
@@ -780,9 +780,9 @@
                     
                     <div class="action-button-container">
                         <span class="button-tag telegram-tag">Free</span>
-                        <button class="action-button telegram-btn" onclick="openInBrowser('https://telegram.dog/EarningScripter1')">
+                        <button class="action-button telegram-btn" id="telegramBtn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21.944 4.133a2.036 2.036 0 0 0-2.127-1.945c-1.225.087-4.458.367-7.817 1.545-3.359 1.178-6.692 2.903-7.77 3.5a2.036 2.036 0 0 0-.723 2.84l2.81 5.175 1.456 4.514a2.036 2.036 0 0 0 2.530 1.345l3.497-1.25 4.124 3.037a2.036 2.036 0 0 0 3.17-1.2c.458-1.733 1.550-6.433 2.157-9.02a2.036 2.036 0 0 0-1.367-2.34zm-3.05 3.317l-9.466 5.725a.678.678 0 0 0-.2.953c.100.15.270.236.450.236a.678.678 0 0 0 .350-.1l7.866-4.97a.678.678 0 0 1 .923.170.678.678 0 0 1-.170.923l-5.725 3.617a.678.678 0 0 0-.200.953.678.678 0 0 0 .953.200l7.866-4.97a2.036 2.036 0 0 0-2.437-3.287z"/>
+                                <path d="M21.944 4.133a2.036 2.036 0 0 0-2.127-1.945c-1.225.087-4.458.367-7.817 1.545-3.359 1.178-6.692 2.903-7.77 3.5a2.036 2.036 0 0 0-.723 2.840l2.81 5.175 1.456 4.514a2.036 2.036 0 0 0 2.530 1.345l3.497-1.25 4.124 3.037a2.036 2.036 0 0 0 3.17-1.2c.458-1.733 1.550-6.433 2.157-9.02a2.036 2.036 0 0 0-1.367-2.340zm-3.05 3.317l-9.466 5.725a.678.678 0 0 0-.200.953c.100.150.270.236.450.236a.678.678 0 0 0 .350-.100l7.866-4.970a.678.678 0 0 1 .923.170.678.678 0 0 1-.170.923l-5.725 3.617a.678.678 0 0 0-.200.953.678.678 0 0 0 .953.200l7.866-4.970a2.036 2.036 0 0 0-2.437-3.287z"/>
                             </svg>
                             Join Telegram
                         </button>
@@ -790,7 +790,7 @@
 
                     <div class="action-button-container">
                         <span class="button-tag gift-tag">New</span>
-                        <button class="action-button gift-btn" onclick="openInBrowser('https://t.me/+XxZZ2gKCWd1iOTI1')">
+                        <button class="action-button gift-btn" id="giftBtn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <rect x="3" y="8" width="18" height="12" rx="2" ry="2"></rect><path d="M12 8V4"></path><path d="M7 8V4"></path><path d="M17 8V4"></path><path d="M3 15h18"></path><path d="M8 12h8"></path>
                             </svg>
@@ -800,7 +800,7 @@
                     
                     <div class="action-button-container">
                         <span class="button-tag support-tag">Live</span>
-                        <button class="action-button support-btn" onclick="openInBrowser('https://telegram.dog/EarningScripter1_bot')">
+                        <button class="action-button support-btn" id="supportBtn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                             </svg>
@@ -818,9 +818,9 @@
             <div class="dialog-message">
                 For best performance and results, register a new account by clicking on the button below.
             </div>
-            <a href="https://colorsignup.github.io/ES1/91club" class="dialog-register-btn" onclick="openInBrowser('https://colorsignup.github.io/ES1/91club')">
+            <button class="dialog-register-btn" id="dialogRegisterBtn">
                 Register Now
-            </a>
+            </button>
         </div>
     </div>
 
@@ -887,11 +887,8 @@
 <script>
 // Function to open URL in external browser
 function openInBrowser(url) {
-    if (typeof Android !== 'undefined' && Android.openExternalUrl) {
-        Android.openExternalUrl(url);
-    } else {
-        window.open(url, '_blank');
-    }
+    // This will be handled by Android WebView's shouldOverrideUrlLoading
+    window.open(url, '_system');
 }
 
 // Function to close any dialog box
@@ -913,6 +910,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const winnerTicker = document.getElementById('winnerTicker');
     const processingMessageElement = document.getElementById('processingMessage');
     const guideBtn = document.getElementById('guideBtn');
+    
+    // Action buttons
+    const registerBtn = document.getElementById('registerBtn');
+    const telegramBtn = document.getElementById('telegramBtn');
+    const giftBtn = document.getElementById('giftBtn');
+    const supportBtn = document.getElementById('supportBtn');
+    const dialogRegisterBtn = document.getElementById('dialogRegisterBtn');
     
     // Dialog Box Elements
     const mainDialogOverlay = document.getElementById('dialogOverlay');
@@ -945,6 +949,28 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.target.id === 'guideOverlay') {
             closeDialog('guideOverlay');
         }
+    });
+
+    // Setup button click handlers to open URLs in external browser
+    registerBtn.addEventListener('click', () => {
+        openInBrowser('https://colorsignup.github.io/ES1/91club');
+    });
+    
+    telegramBtn.addEventListener('click', () => {
+        openInBrowser('https://telegram.dog/EarningScripter1');
+    });
+    
+    giftBtn.addEventListener('click', () => {
+        openInBrowser('https://t.me/+XxZZ2gKCWd1iOTI1');
+    });
+    
+    supportBtn.addEventListener('click', () => {
+        openInBrowser('https://telegram.dog/EarningScripter1_bot');
+    });
+    
+    dialogRegisterBtn.addEventListener('click', () => {
+        openInBrowser('https://colorsignup.github.io/ES1/91club');
+        closeDialog('dialogOverlay');
     });
 
     window.nextStep = (step) => {
